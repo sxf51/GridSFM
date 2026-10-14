@@ -1,0 +1,6 @@
+# The pipeline driver scripts are POSIX shell and are executed by bash inside
+# the Docker image and under WSL / Linux. They must keep LF endings on every
+# platform: on a Windows checkout `core.autocrlf=true` (the Git for Windows
+# default) would otherwise rewrite them to CRLF, and bash then fails with
+# e.g. "set: pipefail: invalid option name".
+*.sh text eol=lf
